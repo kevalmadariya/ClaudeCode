@@ -3,7 +3,7 @@ name: update-project-structure
 description: Generates or incrementally updates PROJECT_STRUCTURE.md with a directory tree, file paths, and class/function summaries.
 context: fork
 agent: Explore
-allowed-tools: Bash(find,git), Read, Grep, Glob, Write
+allowed-tools: Bash(find, git add, git commit, git checkout, git status, git rev-parse, git show-ref, git diff, git log, git push, git pull, git fetch, git clone, git init, git merge), view_file, grep_search, list_dir, write_to_file, replace_file_content, multi_replace_file_content
 ---
 
 # Incremental Project Structure Documenter
