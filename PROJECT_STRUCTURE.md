@@ -1,6 +1,4 @@
 # Project Structure
-**Last updated:** 2026-05-27 15:40:00
-
 ## Directory Tree
 ```
 ClaudeCode/
@@ -16,6 +14,8 @@ ClaudeCode/
 │           └── SKILL.md
 ├── .claude/
 │   └── skills/
+│       ├── create-spec-doc/
+│       │   └── SKILL.md
 │       ├── end-feature/
 │       │   └── SKILL.md
 │       ├── start-feature/
@@ -85,10 +85,9 @@ This is a Claude Code skill definition that generates or incrementally updates t
 * **Agent:** `Explore`
 * **Allowed Tools:** `Bash(find, git add, git commit, git checkout, git status, git rev-parse, git show-ref, git diff, git log, git push, git pull, git fetch, git clone, git init, git merge)`, `view_file`, `grep_search`, `list_dir`, `write_to_file`, `replace_file_content`, `multi_replace_file_content`
 
-### `.claude/skills/start-feature/SKILL.md`
-**Legacy configuration file for the `start-feature` skill.**
-
-* **Allowed Tools:** `Bash(git)`
+### `.claude/skills/create-spec-doc/SKILL.md`
+**Legacy configuration file for the `create-spec-docs` skill.**
+* **Allowed Tools:** `Bash(mkdir)`, `Read`, `Write`, `Grep`, `Glob`
 * **Disable Model Invocation:** true
 
 ### `.claude/skills/end-feature/SKILL.md`
@@ -112,5 +111,3 @@ This is a **Claude Code skill library** for managing Git workflows, project docu
 - **`start-feature`** – Safely creates and switches to a new feature branch with session renaming.
 - **`end-feature`** – Commits and pushes feature branches with safety checks against the main branch.
 - **`update-project-structure`** – Maintains an auto-updating project structure document.
-
-**Files Processed:** 8 SKILL.md files (4 under `.agents/` and 3 under `.claude/`, plus 1 new skill config).
