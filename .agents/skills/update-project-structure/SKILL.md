@@ -54,7 +54,6 @@ Return a brief summary to the user detailing how many files were processed or up
 
 ```md
 # Project Structure
-**Last updated:** YYYY-MM-DD HH:MM:SS
 
 ## Directory Tree
 [Insert visual tree here using ASCII/Markdown format]
