@@ -2,8 +2,8 @@
 name: start-feature
 description: Start a new feature branch from a clean main branch and rename the session.
 argument-hint: [feature_name]
-disable-model-invocation: true
-allowed-tools: Bash(git)
+disable-model-invocation: false
+allowed-tools: Bash(git add, git commit, git checkout, git status, git rev-parse, git show-ref, git diff, git log, git push, git pull, git fetch, git clone, git init, git merge), Command(/rename)
 ---
 
 # Start a feature branch and rename session
