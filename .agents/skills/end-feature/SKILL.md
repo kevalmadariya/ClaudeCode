@@ -3,7 +3,7 @@ name: end-feature
 description: Stage all changes, commit with a message, and push the current feature branch (must not be main).
 argument-hint: [commit_message]
 disable-model-invocation: true
-allowed-tools: Bash(git)
+allowed-tools: Bash(git add, git commit, git checkout, git status, git rev-parse, git show-ref, git diff, git log, git push, git pull, git fetch, git clone, git init, git merge)
 ---
 
 # End a feature branch and push changes
