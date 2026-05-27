@@ -48,3 +48,4 @@ PROJECT_LOWER=$(echo "$PROJECT" | tr '[:upper:]' '[:lower:]')
 
 # Output the rename command exactly so Claude Code executes it
 echo "/rename $PROJECT_LOWER/$FEATURE"
+!"/rename $PROJECT_LOWER/$FEATURE"
