@@ -4,6 +4,7 @@ description: Generates or incrementally updates PROJECT_STRUCTURE.md with a dire
 context: fork
 agent: Explore
 allowed-tools: Bash(find,git), Read, Grep, Glob, Write
+model: nvidia_nim/moonshotai/kimi-k2.6
 ---
 
 # Incremental Project Structure Documenter

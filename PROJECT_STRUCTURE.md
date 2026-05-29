@@ -1,9 +1,14 @@
 # Project Structure
+
+Last updated: 2026-05-29T12:18:54+05:30
+
 ## Directory Tree
 ```
 ClaudeCode/
 ├── .agents/
 │   └── skills/
+│       ├── code-review/
+│       │   └── SKILL.md
 │       ├── create-spec-doc/
 │       │   └── SKILL.md
 │       ├── end-feature/
@@ -14,6 +19,8 @@ ClaudeCode/
 │           └── SKILL.md
 ├── .claude/
 │   └── skills/
+│       ├── code-review/
+│       │   └── SKILL.md
 │       ├── create-spec-doc/
 │       │   └── SKILL.md
 │       ├── end-feature/
@@ -27,6 +34,19 @@ ClaudeCode/
 ```
 
 ## File-by-File Contents
+
+### `.agents/skills/code-review/SKILL.md`
+**Configuration file for the `review-code` skill (for the Antigravity agent).**
+
+This is a Claude Code skill definition that reviews uncommitted code changes and orchestrates test-writing/running:
+* **Name:** `review-code`
+* **Description:** Review uncommitted code changes for industry standards, then generate and run tests using two different subagents.
+* **Allowed Tools:** `Bash(git diff:*)`, `Read`, `Grep`, `Glob`, `Task`
+* **Disable Model Invocation:** true (shell script only, no model inference)
+
+**Subagents defined:**
+* **`test-writer`** – Generates unit/integration test cases based on code changes. Uses a thorough, creative model (`claude-sonnet-4-20250514`).
+* **`test-runner`** – Executes previously generated test cases and reports results. Uses a different model than the writer (`claude-haiku-3-5-20241022`).
 
 ### `.agents/skills/create-spec-doc/SKILL.md`
 **Configuration file for the `create-spec-docs` skill.**
@@ -85,6 +105,9 @@ This is a Claude Code skill definition that generates or incrementally updates t
 * **Agent:** `Explore`
 * **Allowed Tools:** `Bash(find, git add, git commit, git checkout, git status, git rev-parse, git show-ref, git diff, git log, git push, git pull, git fetch, git clone, git init, git merge)`, `view_file`, `grep_search`, `list_dir`, `write_to_file`, `replace_file_content`, `multi_replace_file_content`
 
+### `.claude/skills/code-review/SKILL.md`
+**Legacy configuration file for the `review-code` skill.**
+
 ### `.claude/skills/create-spec-doc/SKILL.md`
 **Legacy configuration file for the `create-spec-docs` skill.**
 * **Allowed Tools:** `Bash(mkdir)`, `Read`, `Write`, `Grep`, `Glob`
@@ -107,6 +130,7 @@ This is a Claude Code skill definition that generates or incrementally updates t
 This is a **Claude Code skill library** for managing Git workflows, project documentation, and feature specifications within the Claude Code IDE.
 
 **Skills Included:**
+- **`review-code`** – Reviews uncommitted code changes and runs tests using subagents.
 - **`create-spec-docs`** – Generates structured feature specification documents after codebase research.
 - **`start-feature`** – Safely creates and switches to a new feature branch with session renaming.
 - **`end-feature`** – Commits and pushes feature branches with safety checks against the main branch.
