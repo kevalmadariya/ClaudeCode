@@ -42,3 +42,9 @@ git push -u origin HEAD
 
 # 6. Final success message
 echo "Pushed branch '$BRANCH' to origin. Feature ready for review."
+
+# 7. Create pull request
+echo "create-pull-request (Missing)"
+
+# 8. Cleanup branches
+echo "cleanup-branches (Missing)"
